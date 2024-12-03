@@ -1,12 +1,12 @@
 const CACHE_NAME = "portfolio-cache-v1";
 const urlsToCache = [
-  "/",
-  "/index.html",
-  "/style.css",
-  "/script.js",
-  "/manifest.json",
-  "/images/icon-192x192.png",
-    "/images/icon-512x512.png"
+  "/portafolio-pwa/",                // Ruta principal
+  "/portafolio-pwa/index.html",      // Página principal
+  "/portafolio-pwa/style.css",       // Archivo CSS
+  "/portafolio-pwa/script.js",       // Archivo JS
+  "/portafolio-pwa/manifest.json",   // Archivo Manifest
+  "/portafolio-pwa/images/icon-192x192.png", // Icono pequeño
+  "/portafolio-pwa/images/icon-512x512.png"  // Icono grande
 ];
 
 // Instalación del service worker
@@ -43,15 +43,3 @@ self.addEventListener("fetch", (event) => {
     })
   );
 });
-
-
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js')
-      .then((registration) => {
-          console.log('Service Worker registrado con éxito:', registration);
-      })
-      .catch((error) => {
-          console.error('Error al registrar el Service Worker:', error);
-      });
-}
-
